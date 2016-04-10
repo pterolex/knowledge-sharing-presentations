@@ -56,6 +56,7 @@
         <p>In non-web languages, most of the code we write is synchronous(blocking)</p>
         <p>But in JavaScript there’s only one thread, so we use that thread to get stuff done.</p>
         <p>So... a long synchronous action will block the thread</p>
+        <b>Here come callbacks!</b>
     </section>
     <section class="slide">
         <h2>Simple asynchronous XMLHttpRequest</h2>
@@ -85,7 +86,7 @@
 		<img src="pictures/callback_hell.png">
 	</section>
     <section class="slide" id="promises">
-        <h2>Promises</h2>
+        <h2>Solution – Promise object</h2>
         <p>
             A Promise represents a proxy for a value not necessarily known when the promise is created.
         </p>
@@ -136,16 +137,27 @@
     </section>
     <section class="slide">
         <h2>Two parallel requests?</h2>
-        <script async src="https://jsfiddle.net/pterolex/48omzpw5/embed/js,result/dark/"></script>
+        <script async src="https://jsfiddle.net/pterolex/48omzpw5/1/embed/js,result/dark/"></script>
     </section>
     <section class="slide">
         <h2>Promises antipatterns</h2>
         <ol>
             <li>Nested Promises</li>
             <li>The Broken Chain</li>
-            <li>Error Handler</li>
-            <li>Nested Promises</li>
+            <li>Wrong place of the error handler</li>
         </ol>
+    </section>
+    <section class="slide">
+        <h2>Nested Promises</h2>
+        <script async src="https://jsfiddle.net/pterolex/b0t19jke/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>The Broken Chain</h2>
+        <script async src="https://jsfiddle.net/pterolex/9j563716/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Wrong place of the error handler</h2>
+        <script async src="https://jsfiddle.net/pterolex/5z40ejz8/1/embed/js,result/dark/"></script>
     </section>
     <section class="slide">
         <h2>Browser support</h2>
@@ -158,6 +170,17 @@
             <li><a href="https://promisesaplus.com/">Promises A+</a></li>
             <li><a href="http://wiki.commonjs.org/wiki/Promises/A">Promises A</a></li>
         </ul>
+    </section>
+    <section class="slide">
+        <h2>Promises libraries</h2>
+        <ol>
+            <li><a href="https://api.jquery.com/category/deferred-object/">jQuery Deferred</a></li>
+            <li><a href="https://github.com/kriskowal/q">Q</a></li>
+            <li><a href="https://github.com/petkaantonov/bluebird">BlueBird</a></li>
+            <li><a href="https://github.com/tildeio/rsvp.js">RSVP</a></li>
+            <li><a href="https://dojotoolkit.org/reference-guide/1.10/dojo/Deferred.html">Dojo Deferred</a></li>
+            <li>...</li>
+        </ol>
     </section>
     <section class="slide">
         <h2>Fetch API</h2>
