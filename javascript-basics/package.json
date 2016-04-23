@@ -1,0 +1,14 @@
+{
+  "name": "javascript-basics",
+  "version": "0.0.1",
+  "description": "Javascript basics(ES5) presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Zaslavsky",
+  "license": "MIT",
+  "dependencies": {
+    "shower": "^2.1.1"
+  }
+}
