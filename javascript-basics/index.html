@@ -6,6 +6,20 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide {
+            padding-top: 25px;
+        }
+
+        .crossed-text {
+            text-decoration: line-through;
+        }
+
+        iframe {
+            height: 500px;
+            width: 825px;
+        }
+    </style>
 </head>
 <body class="shower list">
 	<header class="caption">
@@ -13,37 +27,174 @@
 	</header>
 	<section class="slide" id="cover">
 		<h2>JavaScript basics</h2>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
+        <img src="pictures/logo.png" />
 		<style>
+            #cover {
+                text-align: center;
+            }
 			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
+				margin:60px 0 0;
+				color:black;
 				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
+				font-size:90px;
+			}
 		</style>
 	</section>
+    <section class="slide">
+        <h2>A bit of history (ECMA-262)</h2>
+        <p>1997 – ECMAScript original standard</p>
+        <p>1998 – ECMAScript 2</p>
+        <p>1999 – ECMAScript 3</p>
+        <p class="crossed-text">2008 – ECMAScript 4</p>
+        <p><b>2009 – ECMAScript 5</b></p>
+        <p>2015 – ECMAScript 6 (Harmony) <sub>* ES2015</sub></p>
+    </section>
+    <section class="slide">
+        <h2>ECMAScript 5 support</h2>
+        <iframe src="http://kangax.github.io/compat-table/es5/"></iframe>
+    </section>
+    <section class="slide" id="strict-mode">
+        <h2>ES5 Strict mode: Syntax errors</h2>
+        <ol>
+            <li>Octal syntax var n = 023;</li>
+            <li>with statement</li>
+            <li>Using delete on a variable name <em>delete myVariable;</em></li>
+            <li>Using eval or arguments as variable or function argument name</li>
+            <li>Using one of the newly reserved keywords: <em>implements, interface, let, package, private, protected, public, static, and yield</em></li>
+            <li>Declaring function in blocks if (a&lt;b){ function f(){} }</li>
+            <li>Obvious errors:
+                <ul>
+                    <li>Declaring twice the same name for a property name in an object literal {a: 1, b: 3, a: 7}</li>
+                    <li>Declaring two function arguments with the same name function f(a, b, b){}</li>
+                </ul>
+            </li>
+        </ol>
+        <style>
+            #strict-mode li {
+                font-size: 20px;
+            }
+        </style>
+    </section>
+    <section class="slide" id="strict-mode-2">
+        <h2>ES5 Strict mode: Runtime errors</h2>
+        <ol>
+            <li>Setting a value to an undeclared variable</li>
+            <li>Poisoned arguments and function properties</li>
+            <li>Trying to delete a non-configurable property</li>
+        </ol>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode#Differences_from_non-strict_to_strict">Reference</a>
+        <style>
+            #strict-mode li {
+                font-size: 20px;
+            }
+        </style>
+    </section>
+    <section class="slide" id="strict-mode-3">
+        <h2>ES5 Strict mode: Semantic differences</h2>
+        <ul>
+            <li>
+                <b>this in function calls</b>
+                <br />
+                In function calls like f(), the this value was the <b>global object</b>. In strict mode, it is now <b>undefined</b>
+            </li>
+            <li>
+                <b><em>arguments</em> doesn't alias named function arguments</b>
+                <br />
+                In non-strict mode, modifying a value in the arguments object modifies the corresponding named argument.
+                <br />
+                In strict mode, the arguments object is created and initialized with the same values than the named arguments, but changes to either the arguments object or the named arguments aren't reflected in one another.
+            </li>
+            <li>
+                <b>Change to eval</b>
+                <br />
+                In strict mode code, eval doesn't create a new variable in the scope from which it was called.
+            </li>
+        </ul>
+        <style>
+            #strict-mode-3 li {
+                font-size: 20px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2>ES5 Strict mode</h2>
+        <iframe src="http://caniuse.com/#search=strict%20mode"></iframe>
+    </section>
+    <section class="slide">
+        <h2>Immutable globals</h2>
+        <ul>
+            <li>Infinity</li>
+            <li>NaN</li>
+            <li>undefined</li>
+        </ul>
+        <p>* – These were variables before</p>
+    </section>
+    <section class="slide">
+        <h2>Inheritance in JavaScript</h2>
+        <script async src="https://jsfiddle.net/pterolex/x6xLbkds/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Inheritance in JavaScript</h2>
+        <script async src="https://jsfiddle.net/pterolex/kyofn0z8/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>JSON</h2>
+        <script async src="https://jsfiddle.net/pterolex/a03jys7L/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Object descriptors</h2>
+        <ol>
+            <li>Data descriptors – a property that has a value, which may or may not be writable</li>
+            <li>Accessor descriptors –  a property described by a getter-setter pair of functions</li>
+        </ol>
+        <p>A descriptor must be one of these two flavors; it cannot be both.</p>
+    </section>
+    <section class="slide">
+        <h2>Object.defineProperty(obj, prop, descriptor)</h2>
+        <script async src="https://jsfiddle.net/pterolex/1xsdnwk6/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Function.prototype.bind</h2>
+        <script async src="https://jsfiddle.net/pterolex/ptgrm94r/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.prototype.map</h2>
+        <script async src="https://jsfiddle.net/pterolex/f5qgmwoe/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.prototype.forEach</h2>
+        <script async src="https://jsfiddle.net/pterolex/mk7qeqcg/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.prototype.every, Array.prototype.some</h2>
+        <script async src="https://jsfiddle.net/pterolex/mk2jxjva/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.prototype.filter</h2>
+        <script async src="https://jsfiddle.net/pterolex/fnLw2dte/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.prototype.reduce</h2>
+        <script async src="https://jsfiddle.net/pterolex/aod7j4t5/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Array.isArray</h2>
+        <script async src="https://jsfiddle.net/pterolex/ta18eL7c/embed/"></script>
+    </section>
+    <section class="slide">
+        <h2>Object.keys</h2>
+        <script async src="https://jsfiddle.net/pterolex/ed52zxx4/embed/js,result/dark/"></script>
+    </section>
 	<section class="slide">
-		<h2>All nicely aligned to grid</h2>
+		<h2>References</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PL7664379246A246CB">Douglaus Crockford on JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype">Array.prototype reference</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype">Object.prototype reference</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype">Function.prototype reference</a></li>
+        </ul>
 	</section>
-	<p class="badge">
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>
