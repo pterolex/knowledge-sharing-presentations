@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JavaScript Promises</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide {
+            padding-top: 25px;
+        }
+
+        iframe {
+            height: 500px;
+            width: 825px;
+        }
+    </style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>JavaScript Promises</h1>
+	</header>
+	<section class="slide" id="cover">
+		<h2>JavaScript Promises</h2>
+		<img src="" alt="" class="cover">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+            #cover {
+                background: url('pictures/callback.jpg');
+                background-size: cover;
+            }
+            #cover h2 {
+                margin:30px 0 0;
+                color:#000;
+                text-align:left;
+                font-size:85px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+    <section class="slide">
+        <h2>How we do things in Javascript</h2>
+        <p>In non-web languages, most of the code we write is synchronous(blocking)</p>
+        <p>But in JavaScript there’s only one thread, so we use that thread to get stuff done.</p>
+        <p>So... a long synchronous action will block the thread</p>
+        <b>Here come callbacks!</b>
+    </section>
+    <section class="slide">
+        <h2>Simple asynchronous XMLHttpRequest</h2>
+        <script async src="https://jsfiddle.net/pterolex/ucouuuv0/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Simple XMLHttpRequest with callbacks</h2>
+        <script async src="https://jsfiddle.net/pterolex/ev4ne1ym/2/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Two XMLHttpRequests with callbacks</h2>
+        <script async src="https://jsfiddle.net/pterolex/c5v0r0kc/4/embed/js,result/dark/"></script>
+    </section>
+	<section class="slide">
+		<h2>Two parallel XMLHttpRequests?</h2>
+        <h2 class="shout shrink">Stop, stop, stop!</h2>
+	</section>
+    <section class="slide">
+        <h2>Problems with callbacks</h2>
+        <ol>
+            <li>Async operations in sequence are hard</li>
+            <li>Parallel async operations are hard</li>
+            <li>Errors get lost</li>
+        </ol>
+    </section>
+	<section class="slide">
+		<img src="pictures/callback_hell.png">
+	</section>
+    <section class="slide" id="promises">
+        <h2>Solution – Promise object</h2>
+        <p>
+            A Promise represents a proxy for a value not necessarily known when the promise is created.
+        </p>
+        <p>
+            It allows you to associate handlers to an asynchronous action's eventual success value or failure reason.
+        </p>
+        <p>
+            This lets asynchronous methods return values like synchronous methods: instead of the final value,
+            the asynchronous method returns a promise of having a value at some point in the future.
+        </p>
+    </section>
+    <section class="slide" id="promises_2">
+        <h2>Promises</h2>
+        <div class="front">
+            <p>A Promise is in one of these states:</p>
+
+            <ul>
+                <li><em>pending</em>: initial state, not fulfilled or rejected.</li>
+                <li><em>fulfilled</em>: meaning that the operation completed successfully.</li>
+                <li><em>rejected</em>: meaning that the operation failed.</li>
+            </ul>
+            <p>
+                A pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called.
+            </p>
+            </p>
+            <p>As the <em>Promise.prototype.then()</em> and <em>Promise.prototype.catch()</em> methods return promises, they can be chained – an operation called composition.</p>
+        </div>
+    </section>
+    <section class="slide" id="promises_3">
+        <h2>Promises</h2>
+        <img src="pictures/promises.png">
+        <style type="text/css">
+            #promises_3 img {
+                width: 900px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2>Simple example with promises</h2>
+        <script async src="https://jsfiddle.net/pterolex/545kr198/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>More complicated example</h2>
+        <script async src="https://jsfiddle.net/pterolex/ga76mw0r/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Two parallel requests? Easy</h2>
+        <script async src="https://jsfiddle.net/pterolex/48omzpw5/4/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Promises antipatterns</h2>
+        <ol>
+            <li>Nested Promises</li>
+            <li>The Broken Chain</li>
+            <li>Wrong place of the error handler</li>
+        </ol>
+    </section>
+    <section class="slide">
+        <h2>Nested Promises</h2>
+        <script async src="https://jsfiddle.net/pterolex/b0t19jke/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>The Broken Chain</h2>
+        <script async src="https://jsfiddle.net/pterolex/9j563716/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Wrong place of the error handler</h2>
+        <script async src="https://jsfiddle.net/pterolex/5z40ejz8/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Browser support</h2>
+        <iframe src="http://caniuse.com/#search=promise"></iframe>
+    </section>
+    <section class="slide">
+        <h2>Specifications</h2>
+        <ul>
+            <li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects">ECMAScript 2015</a></li>
+            <li><a href="https://promisesaplus.com/">Promises A+</a></li>
+            <li><a href="http://wiki.commonjs.org/wiki/Promises/A">Promises A</a></li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Promises libraries</h2>
+        <ol>
+            <li><a href="https://api.jquery.com/category/deferred-object/">jQuery Deferred</a></li>
+            <li><a href="https://github.com/kriskowal/q">Q</a></li>
+            <li><a href="https://github.com/petkaantonov/bluebird">BlueBird</a></li>
+            <li><a href="https://github.com/tildeio/rsvp.js">RSVP</a></li>
+            <li><a href="https://dojotoolkit.org/reference-guide/1.10/dojo/Deferred.html">Dojo Deferred</a></li>
+            <li>...</li>
+        </ol>
+    </section>
+    <section class="slide">
+        <h2>Fetch API</h2>
+        <p>
+            The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses.
+        </p>
+        <p>
+            It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+        </p>
+        <p>
+            Fetch returns a <b>promise</b> object
+        </p>
+    </section>
+    <section class="slide">
+        <h2>Fetch example</h2>
+        <script async src="https://jsfiddle.net/pterolex/5bbLsru0/1/embed/js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Fetch browser support</h2>
+        <iframe src="http://caniuse.com/#search=fetch"></iframe>
+    </section>
+    <section class="slide">
+        <h2 class="shout">
+            <a href="https://github.com/github/fetch">Fetch polyfill</a>
+        </h2>
+    </section>
+	<section class="slide">
+		<h2>Async/await</h2>
+        <script async src="//jsfiddle.net/9f6bhhxs/1/embed/js,result/dark/"></script>
+        <script async src="https://jsfiddle.net/pterolex/9f6bhhxs/2/embed/js,result/dark/"></script>
+	</section>
+	<div class="progress"></div>
+	<script src="../node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
