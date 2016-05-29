@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Packing Frontend Applications</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/theme/monokai.css">
+    <script src="../node_modules/codemirror/lib/codemirror.js"></script>
+    <style>
+        .slide {
+            padding-top: 25px;
+        }
+
+        .crossed-text {
+            text-decoration: line-through;
+        }
+
+        iframe {
+            height: 500px;
+            width: 825px;
+        }
+        .codemirror {
+            height: 600px;
+        }
+
+        img {
+            width: 900px;
+        }
+    </style>
+</head>
+<body class="shower list">
+	<header class="caption">
+        <h1>Packing Frontend Applications</h1>
+    </header>
+    <section class="slide" id="cover">
+        <h2>Packing Frontend Applications</h2>
+		<h3>Modern Frontend Part 1</h3>
+
+        <img src="images/webpack-logo.png" />
+		<style>
+            #cover {
+                text-align: center;
+            }
+			#cover h2 {
+				margin:60px 0 0;
+				color:black;
+				text-align:center;
+				font-size:60px;
+			}
+
+            #cover img {
+                width: 400px;
+            }
+            h3 {
+                font-weight: bold;
+            }
+		</style>
+	</section>
+    <section class="slide">
+        <h2>The problem</h2>
+        <ul>
+            <li>Web sites are turning into Web apps</li>
+            <li>Code complexity grows as the app gets bigger</li>
+            <li>Assembly gets harder</li>
+            <li>Developer wants discrete JS files/modules</li>
+            <li>Every module might have its own CSS file</li>
+            <li>Deployment wants optimized code in just one or a few HTTP calls</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Solution</h2>
+
+        <p>Front-end developers need a solution with:</p>
+
+        <ul>
+            <li>Some sort of #include/import/require</li>
+            <li>Ability to load nested dependencies</li>
+            <li>Ease of use for developer but then backed by an optimization tool that helps deployment</li>
+        </ul>
+    </section>
+    <section class="slide" id="no-modules">
+        <h2>A long time ago in a galaxy far far away...</h2>
+        <h3>there were no modules</h3>
+        <script async src="https://jsfiddle.net/pterolex/emdtsubL/embed/html/"></script>
+        <style>
+            #no-modules h2 {
+                margin-bottom: 0px;
+            }
+            #no-modules h3 {
+                color: #585a5e;
+            }
+        </style>
+    </section>
+    <section class="slide" id="iife-modules">
+        <h2>Script tag modules</h2>
+        <p><b>Cons:</b></p>
+        <ul>
+            <li>Conflicts in the global object.</li>
+            <li>Order of loading is important.</li>
+            <li>Developers have to resolve dependencies of modules/libraries.</li>
+            <li>In big projects the list can get really long and difficult to manage.</li>
+        </ul>
+    </section>
+    <section class="slide" id="commonjs-modules-1">
+        <h2>CommonJS</h2>
+        <script async src="https://jsfiddle.net/pterolex/L6md67uj/embed/"></script>
+    </section>
+    <section class="slide" id="commonjs-modules-2">
+        <h2>CommonJS</h2>
+        <p><b>Pros:</b></p>
+        <ul>
+            <li>Fits to the asynchronous request style in networks.</li>
+            <li>Parallel loading of multiple modules.</li>
+        </ul>
+        <p><b>Cons:</b></p>
+        <ul>
+            <li>Coding overhead. More difficult to read and write.</li>
+            <li>Seems to be some kind of workaround.</li>
+        </ul>
+    </section>
+    <section class="slide" id="amd-modules">
+        <h2>AMD – Asynchronous Module Definition </h2>
+        <script async src="https://jsfiddle.net/pterolex/ruuyddsL/embed/js/"></script>
+    </section>
+    <section class="slide" id="umd-modules">
+        <h2>UMD – Universal Module Definition </h2>
+        <script async src="https://jsfiddle.net/pterolex/naawv74c/embed/js/"></script>
+    </section>
+    <section class="slide" id="es-modules">
+        <h2>ECMAScript 2015 modules</h2>
+        <script async src="https://jsfiddle.net/pterolex/uvyj7wew/embed/js/"></script>
+    </section>
+    <section class="slide" id="es-modules">
+        <h2>ECMAScript 2015 modules</h2>
+        <p><b>Pros:</b></p>
+        <ul>
+            <li>Static analysis is easy</li>
+            <li>Future-proof as ES standard</li>
+        </ul>
+        <p><b>Cons:</b></p>
+        <ul>
+            <li>Native browser support will take time</li>
+            <li>Very few modules in this style</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Difference between dev and production</h2>
+        <img src="images/dev.png" />
+    </section>
+    <section class="slide">
+        <h2>Difference between dev and production</h2>
+        <img src="images/prod.png" />
+    </section>
+    <section class="slide">
+        <h2>What about assets?</h2>
+        <ul>
+            <li>Images</li>
+            <li>CSS</li>
+            <li>Fonts</li>
+            <li>JSON</li>
+            <li>HTML Templates</li>
+        </ul>
+        <h3>Nothing 😢</h3>
+    </section>
+    <section class="slide">
+        <h2>Preprocessing</h2>
+        <ul>
+            <li>ES6 → Javascript</li>
+            <li>TypeScript → Javascript</li>
+            <li>LESS stylesheets → CSS stylesheets</li>
+            <li>JADE templates → javascript which generates html</li>
+            <li>i18n files → something</li>
+            <li>...</li>
+        </ul>
+    </section>
+    <section class="slide" id="webpack">
+        <h2>Webpack</h2>
+        <img src="images/webpack.png" />
+        <style>
+            #webpack img {
+                width: 900px !important;
+            }
+        </style>
+    </section>
+    <section class="slide" id="webpack-2">
+        <h2>What is Webpack</h2>
+        <p><strong>Webpack</strong> is a <strong>module bundler</strong>.</p>
+        <p>Webpack takes modules with dependencies and generates static assets representing those modules.</p>
+    </section>
+    <section class="slide">
+        <h2>Goals</h2>
+        <ul>
+            <li>Split the dependency tree into chunks loaded on demand</li>
+            <li>Keep initial loading time low</li>
+            <li>Every static asset should be able to be a module</li>
+            <li>Ability to integrate 3rd-party libraries as modules</li>
+            <li>Ability to customize nearly every part of the module bundler</li>
+            <li>Suited for big projects</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Features</h2>
+        <h3>Code Splitting</h3>
+        <p>webpack has two types of dependencies in its dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized, a file is emitted for each chunk</p>
+        <h3>Loaders</h3>
+        <p>webpack can only process JavaScript natively, but loaders are used to transform other resources into JavaScript. By doing so, every resource forms a module.</p>
+    </section>
+    <section class="slide">
+        <h2>Features</h2>
+        <h3>Clever parsing</h3>
+        <p>webpack has a clever parser that can process nearly every 3rd party library. It even allows expressions in dependencies like so <code>require(<span class=string>"./templates/"</span> + name + <span class=string>".jade"</span>)</code>. It handles the most common module styles: CommonJs and AMD
+        <h3>Plugin system</h3>
+        <p>webpack features a rich plugin system. Most internal features are based on this plugin system. This allows you to customize webpack for your needs and distribute common plugins as open source.</p>
+    </section>
+    <section class="slide">
+        <h2>Webpack vs Dojo Build</h2>
+
+    </section>
+    <section class="slide" id="references">
+        <h2>References</h2>
+        <ul>
+            <li><a href="http://webpack.github.io/docs/">Webpack</a></li>
+            <li><a href="">Require.js</a></li>
+            <li><a href="">AMD</a></li>
+        </ul>
+    </section>
+	<div class="progress"></div>
+	<script src="../node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>

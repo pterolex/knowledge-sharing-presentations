@@ -1,7 +1,7 @@
 {
-  "name": "javascript-basics",
+  "name": "knowledge-sharing",
   "version": "0.0.1",
-  "description": "Javascript basics(ES5) presentation",
+  "description": "Knowledge sharing presentations for Ignite Outsourcing",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "Alexey Zaslavsky",
   "license": "MIT",
   "dependencies": {
+    "codemirror": "^5.15.2",
     "shower": "^2.1.1"
   }
 }
