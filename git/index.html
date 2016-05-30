@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JavaScript basics</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide {
+            padding-top: 25px;
+        }
+
+        .crossed-text {
+            text-decoration: line-through;
+        }
+
+        iframe {
+            height: 500px;
+            width: 825px;
+        }
+
+        img {
+            width: 800px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>JavaScript basics</h1>
+	</header>
+	<section class="slide" id="cover">
+        <h2>Git basics</h2>
+
+        <img src="images/git_logo.png" />
+		<style>
+            #cover {
+                text-align: center;
+            }
+            #cover img {
+                width: 250px;
+                margin-top: 50px;
+            }
+			#cover h2 {
+				margin:60px 0 0;
+				color:black;
+				text-align:center;
+				font-size:90px;
+			}
+		</style>
+	</section>
+    <section class="slide">
+        <h2>Version control systems (VCS)</h2>
+        <p><b>Centralized</b></p>
+        <ul>
+            <li>Revision Control System</li>
+            <li>Concurrent Versions System</li>
+            <li>Subversion</li>
+            <li>Team Foundation Server</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Version control systems (VCS)</h2>
+        <p><b>Distributed</b></p>
+        <ul>
+            <li>Git</li>
+            <li>Mercurial</li>
+            <li>Bazaar</li>
+            <li>BitKeeper</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Centralized VCS</h2>
+        <img src="images/cvcs.png" />
+    </section>
+    <section class="slide">
+        <h2>Commits in SVN</h2>
+        <img src="images/svn_commits.png" />
+    </section>
+    <section class="slide">
+        <h2>Commits in Git</h2>
+        <img src="images/git_commits.png" />
+    </section>
+    <section class="slide" id="git-workflow">
+        <h2>Git workflow</h2>
+        <img src="images/git_workflow.png" />
+        <style type="text/css">
+            #git-workflow img {
+                height: 510px;
+            }
+        </style>
+    </section>
+    <section class="slide" id="git-lifecycle">
+        <h2>File status lifecycle in Git</h2>
+        <img src="images/file_lifecycle.png" />
+        <style type="text/css">
+            #git-lifecycle img {
+                height: 510px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink">Git Demo</h2>
+    </section>
+    <section class="slide" id="git-hosting">
+        <h2>Git hosting services</h2>
+        <div class="hosting-images-wrapper">
+            <img src="images/github.jpg" />
+            <img src="images/bitbucket.png" />
+            <img src="images/gitlab.png" />
+        </div>
+        <style type="text/css">
+            #git-hosting .hosting-images-wrapper {
+                display: flex;
+                height: 300px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #git-hosting img {
+                width: auto;
+                transform: scale(0.7);
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2>Gitlab Community Edition</h2>
+        <ul>
+            <li>Git repository management</li>
+            <li>Code review</li>
+            <li>Issue tracking</li>
+            <li>Activity feeds and wikis</li>
+            <li>Integration with Active Directory</li>
+            <li>GitLab CI for continuous integration and delivery</li>
+            <li>MIT license</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink">Gitlab Demo</h2>
+    </section>
+	<section class="slide">
+		<h2>References</h2>
+        <ul>
+            <li><a href="https://git-scm.com/book/en/v2">Git book</a></li>
+            <li><a href="https://gitlab.com">Gitlab Community Edition</a></li>
+            <li><a href="https://www.sourcetreeapp.com/">Atlassian SourceTree client</a></li>
+        </ul>
+	</section>
+	<div class="progress"></div>
+	<script src="../node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
