@@ -30,6 +30,16 @@
             width: 900px;
         }
     </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79194582-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </head>
 <body class="shower list">
 	<header class="caption">
@@ -133,7 +143,7 @@
         <h2>ECMAScript 2015 modules</h2>
         <script async src="https://jsfiddle.net/pterolex/uvyj7wew/embed/js/"></script>
     </section>
-    <section class="slide" id="es-modules">
+    <section class="slide" id="es-modules-2">
         <h2>ECMAScript 2015 modules</h2>
         <p><b>Pros:</b></p>
         <ul>
@@ -154,7 +164,7 @@
         <h2>Difference between dev and production</h2>
         <img src="images/prod.png" />
     </section>
-    <section class="slide">
+    <section class="slide" id="assets">
         <h2>What about assets?</h2>
         <ul>
             <li>Images</li>
@@ -163,7 +173,13 @@
             <li>JSON</li>
             <li>HTML Templates</li>
         </ul>
-        <h3>Nothing 😢</h3>
+        <h3 class="shout shrink">Nothing 😢</h3>
+        <style type="text/css">
+            #assets .shout {
+                font-size: 40px;
+                top: 70%;
+            }
+        </style>
     </section>
     <section class="slide">
         <h2>Preprocessing</h2>
@@ -216,8 +232,85 @@
         <p>webpack features a rich plugin system. Most internal features are based on this plugin system. This allows you to customize webpack for your needs and distribute common plugins as open source.</p>
     </section>
     <section class="slide">
+        <h2>Webpack development server</h2>
+        <ul>
+            <li>Automatic refresh</li>
+            <li>Hot module replacement</li>
+        </ul>
+    </section>
+    <section class="slide" id="webpack-vs-dojo">
         <h2>Webpack vs Dojo Build</h2>
-
+        <table>
+        <tr>
+            <th scope="col"></th>
+            <th>Webpack</th>
+            <th>Dojo</th>
+        </tr>
+        <tr>
+            <th scope="col">AMD Modules</th>
+            <th class="green">✔︎</th>
+            <th class="green">✔︎</th>
+        </tr>
+        <tr>
+            <th scope="row">Common.JS</th>
+            <td class="green">✔︎</td>
+            <td class="green">✔︎</td>
+        </tr>
+        <tr>
+            <th scope="row">UMD modules</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        <tr>
+            <th scope="row">HTML templates</th>
+            <td class="green">✔︎</td>
+            <td class="green">✔︎</td>
+        </tr>
+        <tr>
+            <th scope="row">Images</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        <tr>
+            <th scope="row">CSS</th>
+            <td class="green">✔︎</td>
+            <td class="red">✔︎</td>
+        </tr>
+        <tr>
+            <th scope="row">ES6/TypeScript/CoffeeScript</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        <tr>
+            <th scope="row">Development server</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        <tr>
+            <th scope="row">Hot reloading</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        <tr>
+            <th scope="row">Making coffee</th>
+            <td class="green">✔︎</td>
+            <td class="red">✘</td>
+        </tr>
+        </table>
+        <style>
+            #webpack-vs-dojo .green {
+                color: green;
+            }
+            #webpack-vs-dojo .red {
+                color: red;
+            }
+            #webpack-vs-dojo h2 {
+                margin-bottom: 5px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink">Demo</h2>
     </section>
     <section class="slide" id="references">
         <h2>References</h2>

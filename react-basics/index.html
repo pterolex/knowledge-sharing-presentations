@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Modern Frontend: React.js</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide {
+            padding-top: 25px;
+        }
+
+        iframe {
+            height: 500px;
+            width: 825px;
+        }
+
+        img {
+            width: 900px;
+        }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79194582-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body class="shower list">
+	<header class="caption">
+        <h1>React.js</h1>
+    </header>
+    <section class="slide" id="cover">
+
+        <h2>Introduction to React.js</h2>
+        <h3>Modern Frontend Part 2</h3>
+
+        <img src="images/react-logo.png" />
+        <style>
+            #cover {
+                text-align: center;
+            }
+            #cover h2 {
+                margin:60px 0 0;
+                color:black;
+                text-align:center;
+                font-size:60px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>The problem</h2>
+        <ul>
+            <li>Web sites are turning into Web apps</li>
+            <li>Code complexity grows as the app gets bigger</li>
+            <li>It becomes harder to manage the application state and update the view</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Static pages</h2>
+        <ul>
+            <li>Page reloads after every user action</li>
+            <li>Cons: losing state after reload, speed, UX</li>
+        </ul>
+        <img src="https://raw.githubusercontent.com/krambertech/react-essential-course/master/01-introduction-to-react/images/001.png" />
+    </section>
+
+    <section class="slide">
+        <h2>AJAX</h2>
+        <ul>
+            <li>Parts of the page are updated via background requests</li>
+            <li>SPA (Single Page Application) approach</li>
+        </ul>
+        <img src="https://raw.githubusercontent.com/krambertech/react-essential-course/master/01-introduction-to-react/images/002.png" />
+    </section>
+
+    <section class="slide">
+        <h2>Document Object Model</h2>
+        <ul>
+            <li>The DOM was designed for static content, not frequent updates</li>
+            <li>Updating the DOM is <b>very slow</b></li>
+        </ul>
+        <img src="https://raw.githubusercontent.com/krambertech/react-essential-course/master/01-introduction-to-react/images/006.png" />
+    </section>
+
+    <section class="slide" >
+        <h2>DOM update flow</h2>
+        <ol>
+            <li>Load data from the server</li>
+            <li>Render the DOM tree using the data</li>
+            <li>Handle user input to update the data</li>
+            <li><b>Change the DOM to match the updated data *</b></li>
+        </ol>
+        <p>Step 4 is usually the hardest and the most error-prone to implement, when the web app becomes more complex</p>
+    </section>
+
+    <section class="slide" id="rerender">
+        <h2 class="shout shrink">What if we could rerender the whole app like in the good old 90's?</h2>
+        <style>
+            #rerender h2 {
+                font-size: 75px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="react">
+        <h2>React.js</h2>
+        <p>A <b>view library</b> introduced by Facebook in 2013</p>
+        <ul>
+            <li>Declarative</li>
+            <li>Component based</li>
+            <li>Rerender on every state change</li>
+            <li>Virtual DOM</li>
+            <li>One way data flow</li>
+        </ul>
+        <img src="images/react-logo.png" />
+        <style>
+            #react img {
+                width: 300px;
+                margin-left: 40%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" >
+        <h2>Virtual DOM</h2>
+        <img src="http://dev.afas.nl/insite-afas/virtual-dom-how-inefficiency-can-lead-to-better-performance/virtual%20dom.png" />
+    </section>
+
+    <section class="slide" >
+        <h2>Building components, not templates</h2>
+        <ul>
+            <li>Templates are often underpowered</li>
+            <li>Templates reinvent concepts that already exist in JavaScript</li>
+            <li>Templates and UI logic are highly coupled</li>
+            <li>Templates separate technologies, not concerns</li>
+        </ul>
+    </section>
+
+    <section class="slide" >
+        <h2>JSX</h2>
+        <p>An optional preprocessor for HTML-like syntax (especially useful for designers)</p>
+        <iframe src="https://babeljs.io/repl/#?evaluate=true&lineWrap=true&presets=es2015%2Creact%2Cstage-1&experimental=true&loose=false&spec=false&playground=false&code=React.createClass(%7B%0D%20%20%20%20%20%20%20%20render%3A%20function()%20%7B%0D%20%20%20%20%20%20%20%20%20%20%20%20var%20name%20%3D%20'%40UserName'%0D%20%20%20%20%20%20%20%20%20%20%20%20return%20(%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Hello%20%7Bname%7D!%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%20%20%20%20%20%20%20%20%20%20%20%20)%3B%0D%20%20%20%20%20%20%20%20%7D%0D%20%20%20%20%7D)%3B"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>Simple component</h2>
+        <script async src="https://jsfiddle.net/pterolex/hfod94v1/embed/js,html,result/"></script>
+    </section>
+
+    <section class="slide">
+        <h2>Stateful component</h2>
+        <script async src="https://jsfiddle.net/pterolex/qcv2kmyt/embed/js,html,result/"></script>
+    </section>
+
+    <section class="slide">
+        <h2>Components composition</h2>
+        <script async src="https://jsfiddle.net/pterolex/systp1m8/embed/js,html,result/"></script>
+    </section>
+
+    <section class="slide">
+        <h2>Developer tools</h2>
+        <img src="https://facebook.github.io/react/img/blog/devtools-full.gif" />
+    </section>
+
+    <section class="slide">
+        <h2>Important things</h2>
+        <ol>
+            <li>Server side rendering (Node.js, ReactJS.NET)</li>
+            <li>Handling XSS vulnerabilities: React escapes all strings</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>React is not only about DOM</h2>
+        <p>Learn once, use anywhere</p>
+        <ol>
+            <li>React Native (iOS, Android, Windows)</li>
+            <li>React-ART (canvas)</li>
+            <li>React-three (3D scenes using WebGL)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Success stories</h2>
+        <ol>
+            <li><a href="https://speakerdeck.com/jamischarles/reactrally-migrating-critical-apps-to-react">PayPal: Migrating Critical Apps to React</a></li>
+            <li><a href="https://developer.atlassian.com/blog/2015/02/rebuilding-hipchat-with-react/">Atlassian HipChat</a></li>
+            <li><a href="https://developer.wordpress.com/2015/11/23/the-story-behind-the-new-wordpress-com/">WordPress Admin Panel</a></li>
+            <li><a href="http://www.slideshare.net/rmsguhan/react-meetup-mailonreact">Yahoo Mail</a></li>
+            <li><a href="http://techblog.netflix.com/2015/01/netflix-likes-react.html">Netflix</a></li>
+            <li><a href="http://blog.atom.io/2014/07/02/moving-atom-to-react.html">Atom Editor</a></li>
+            <li><a href="https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/">Windows Applications with React Native</a></li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Other Virtual DOM implementations</h2>
+        <p>After React became very popular, other develpers created their own libraries</p>
+        <ol>
+            <li><a href="https://github.com/Matt-Esch/virtual-dom">Matt-Esch/virtual-dom</a></li>
+            <li><a href="http://maquettejs.org/">Maquette.js</a></li>
+            <li><a href="http://mithril.js.org/">Mithril</a></li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Companies using React</h2>
+        <p><a href="https://github.com/facebook/react/wiki/Sites-Using-React">A long list of more than 500 companies</a></p>
+        <iframe src="http://react.careers/"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Demo</h2>
+    </section>
+    <section class="slide" id="references">
+        <h2>References</h2>
+        <ul>
+            <li><a href="http://facebook.github.io/react/docs/getting-started.html">React documentation</a></li>
+            <li><a href="https://www.youtube.com/watch?v=XxVg_s8xAms">Introduction to React.js</a></li>
+            <li><a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">Pete Hunt: React: Rethinking best practices -- JSConf EU 2013</a></li>
+            <li><a href="https://www.youtube.com/watch?v=YJNUK0EA_Jo">Alexandr Solovyov: React, how to make your life simpler  (in russian)</a></li>
+            <li><a href="https://github.com/showcases/front-end-javascript-frameworks">Front-end frameworks and libraries popularity</a></li>
+        </ul>
+    </section>
+	<div class="progress"></div>
+	<script src="../node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
