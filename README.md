@@ -1,4 +1,4 @@
-# (http://pterolex.github.io/ignite-knowledge-sharing/)[Knowledge sharing presentations]
+# [Knowledge sharing presentations](http://pterolex.github.io/ignite-knowledge-sharing/)
 
 1. Git and GitLab
 2. Front-end Packing with Webpack
