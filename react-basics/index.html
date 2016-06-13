@@ -102,7 +102,7 @@
     </section>
 
     <section class="slide" id="rerender">
-        <h2 class="shout shrink">What if we could rerender the app every like the first time?</h2>
+        <h2 class="shout shrink">What if we could rerender the whole app like in the good old 90's?</h2>
         <style>
             #rerender h2 {
                 font-size: 75px;
@@ -135,8 +135,18 @@
     </section>
 
     <section class="slide" >
+        <h2>Building components, not templates</h2>
+        <ul>
+            <li>Templates are often underpowered</li>
+            <li>Templates reinvent concepts that already exist in JavaScript</li>
+            <li>Templates and UI logic are highly coupled</li>
+            <li>Templates separate technologies, not concerns</li>
+        </ul>
+    </section>
+
+    <section class="slide" >
         <h2>JSX</h2>
-        <p>An optional preprocessor for HTML-like syntax</p>
+        <p>An optional preprocessor for HTML-like syntax (especially useful for designers)</p>
         <iframe src="https://babeljs.io/repl/#?evaluate=true&lineWrap=true&presets=es2015%2Creact%2Cstage-1&experimental=true&loose=false&spec=false&playground=false&code=React.createClass(%7B%0D%20%20%20%20%20%20%20%20render%3A%20function()%20%7B%0D%20%20%20%20%20%20%20%20%20%20%20%20var%20name%20%3D%20'%40UserName'%0D%20%20%20%20%20%20%20%20%20%20%20%20return%20(%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Hello%20%7Bname%7D!%0D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%20%20%20%20%20%20%20%20%20%20%20%20)%3B%0D%20%20%20%20%20%20%20%20%7D%0D%20%20%20%20%7D)%3B"></iframe>
     </section>
 
