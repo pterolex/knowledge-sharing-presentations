@@ -6,3 +6,5 @@
 4. Asynchronous JavaScript with Promises and async/await
 5. JavaScript basics ( ECMAScript5 )
 6. Modern JavaScript (ECMAScript2015) – TBD
+7. CSS Preprocessors – TBD
+8. Flux architecture – TBD
