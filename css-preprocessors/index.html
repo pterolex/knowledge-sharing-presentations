@@ -23,12 +23,12 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>CSS Preprocessing</h1>
+		<h1>CSS Preprocessing tools</h1>
 	</header>
 	<section class="slide" id="cover">
-        <h2>CSS Preprocessing</h2>
-
         <img src="pictures/less.jpeg" />
+
+        <h2>CSS Preprocessing tools</h2>
 		<style>
             #cover {
                 text-align: center;
@@ -52,8 +52,15 @@
         <p>
             <b>CSS pre-processor</b> is a tool that compiles syntaxically enhanced style language to plain CSS
         </p>
+        <h2>Why do we need preprocessing?</h2>
+        <p>
+            <ol>
+                <li>The CSS standard is evolving slowly.</li>
+                <li>We want to use new features today.</li>
+                <li>We want to use better syntax.</li>
+            </ol>
+        </p>
     </section>
-	</section>
     <section class="slide">
         <h2>What useful features is CSS missing?</h2>
         <ol>
@@ -61,16 +68,62 @@
             <li>Nested rules</li>
             <li>Mixins</li>
             <li>Modules</li>
+            <li>Calculations</li>
         </ol>
     </section>
     <section class="slide">
         <h2>The evolution of preprocessing</h2>
-        <p>2007 – SCSS (Ruby)</p>
+        <p>2007 – SASS (SCSS) (Ruby)</p>
         <p>2009 – <b>LESS</b> (JS)</p>
         <p>2010 – Stylus (JS)</p>
         <p>2013 – <b>PostCSS</b> (JS)</p>
     </section>
-
+    <section class="slide">
+        <h2>Benefits of using LESS:</h2>
+        <ul>
+            <li>Less code than with CSS</li>
+            <li>Language features</li>
+            <li>LESS is pure JavaScript (~5x faster than SCSS)</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Variables</h2>
+        <script async src="https://jsfiddle.net/pterolex/fp164ju4/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Nesting and parent selectors</h2>
+        <script async src="https://jsfiddle.net/pterolex/L3ynj61s/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Extend syntax</h2>
+        <script async src="https://jsfiddle.net/pterolex/1xct3duu/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Mixins</h2>
+        <script async src="https://jsfiddle.net/pterolex/zmxk01fe/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Loops</h2>
+        <script async src="https://jsfiddle.net/pterolex/xnfnsj8h/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2>Merge</h2>
+        <script async src="https://jsfiddle.net/pterolex/41obxz3b/embed/css,html,js,result/dark/"></script>
+    </section>
+    <section class="slide">
+        <h2><a href="http://lesscss.org/functions/#functions-overview" target="_blank">Language functions</a></h2>
+        <ol>
+            <li><b>String Functions</b> (escape)</li>
+            <li><b>Math Functions</b> (sin, cos, pi ...)</li>
+            <li><b>Type Functions</b> (isnumber, isstring, iscolor ...)</li>
+            <li><b>Color Operation Functions </b> (lighten, saturate, darken ...)</li>
+            <li><b>Color Blending Functions</b> (multiply, screen, overlay ...)</li>
+        </ol>
+    </section>
+    <section class="slide">
+        <h2>Color Operation Functions</h2>
+        <script async src="https://jsfiddle.net/pterolex/enhr1ez2/embed/css,html,js,result/dark/"></script>
+    </section>
 	<section class="slide">
 		<h2>References</h2>
         <ul>
